@@ -6,9 +6,10 @@ You can customize NMCustomView to dismiss on background tap gesture and to use b
 
 ## Screenshots
 
-|![Zoom select](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView1.png)|![Zoom image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView2.png)|
+| ![Zoom select](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView1.png) | ![Zoom image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView2.png) |
 
-|![Preview select](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView3.png)|![Preview image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView4.png)| 
+
+| ![Preview select](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView3.png) | ![Preview image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView4.png) | 
 
 ## Usage 
 
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
 
 6. Dismiss customView
 
-Tap on background to dismiss or: 
+    Tap on background to dismiss or: 
 
 ```swift
 
