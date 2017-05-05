@@ -28,9 +28,7 @@ class NMCustomView: UIView {
     fileprivate func setupView(_ view: UIView, dismissOnBackgroundTap: Bool, backgroundBlurEffect: Bool) {
         
         let keyWindow = UIApplication.shared.keyWindow
-        
         let keyWindowBounds = keyWindow?.bounds as CGRect!
-        
         self.frame = keyWindowBounds!
         
         self.backgroundView = UIView(frame: keyWindowBounds!)
@@ -61,19 +59,15 @@ class NMCustomView: UIView {
             self.backgroundView.alpha = 0
         }
         
-        self.contentView = view
-        
-        self.contentView.center = CGPoint(x: (keyWindowBounds?.midX)!, y: (keyWindowBounds?.midY)!)
-        
         self.addSubview(backgroundView)
         
+        self.contentView = view
+        self.contentView.center = CGPoint(x: (keyWindowBounds?.midX)!, y: (keyWindowBounds?.midY)!)
         self.addSubview(contentView)
-        
         
         if dismissOnBackgroundTap {
             
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NMCustomView.dismiss))
-            
             self.backgroundView.addGestureRecognizer(tapRecognizer)
         }
         
@@ -97,15 +91,9 @@ class NMCustomView: UIView {
             
         }
         
-        
-        let center: CGPoint? = keyWindow?.center
-        
-        if(center != nil) {
-            
-            self.contentView.center = center!
-            
+        if let center: CGPoint = keyWindow?.center {
+            self.contentView.center = center
         }
-        
     }
     
     func dismiss() {
@@ -123,8 +111,5 @@ class NMCustomView: UIView {
         }) { (Bool) -> Void in
             self.removeFromSuperview()
         }
-        
     }
-
-
 }
