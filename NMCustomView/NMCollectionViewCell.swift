@@ -10,7 +10,6 @@ import UIKit
 
 class NMCollectionViewCell: UICollectionViewCell {
    
-    @IBOutlet var bodyImageView: UIImageView!
-   
+    @IBOutlet var bodyImageView: UIImageView!   
     
 }

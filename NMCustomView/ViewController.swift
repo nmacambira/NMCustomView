@@ -15,11 +15,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet var messageLabel: UILabel!
     
     var customView: NMCustomView!
-    
     var zoomView: NMZoomView!
-    
     var previewView: NMPreviewView!
-    
     private let reuseIdentifier = "item"
     
     override func viewDidLoad() {
@@ -40,18 +37,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func createZoomView() {
         
         zoomView = Bundle.main.loadNibNamed("NMZoomView", owner: self, options: nil)?.first as! NMZoomView
-        
         let image = UIImage(named: "Image.jpg")
         zoomView.imageView.image = image
-        
     }
     
     func createPreviewView(withBodyImage bodyImage: UIImage) {
         
         previewView = Bundle.main.loadNibNamed("NMPreviewView", owner: self, options: nil)?.first as! NMPreviewView
-        
         previewView.bodyImageView.image = bodyImage
-        
     }
     
     
@@ -84,7 +77,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func showPreviewWtihLongPress (_ gesture: UILongPressGestureRecognizer) {
         
         showPreviewWtihLongPress(gesture, view: self.view, collectionView: self.collectionView)
-        
     }
 
     @IBAction func changedValue(_ sender: UISegmentedControl) {
@@ -108,7 +100,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func zoomButton(_ sender: UIButton) {
         
-        customView = NMCustomView(showView: zoomView, dismissOnBackgroundTap: true, backgroundBlurEffect: false)
+        customView = NMCustomView(showView: zoomView, tapOnBackgroundToDismiss: true, backgroundBlurEffect: false)
         customView.show()
     }
     
@@ -131,11 +123,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? NMCollectionViewCell {
                         
                         createPreviewView(withBodyImage: cell.bodyImageView.image!)
-                        
                         previewView.frame.size.width = windowWidth - 20
                         
-                        customView = NMCustomView(showView: previewView, dismissOnBackgroundTap: false, backgroundBlurEffect: true)
-                        
+                        customView = NMCustomView(showView: previewView, tapOnBackgroundToDismiss: false, backgroundBlurEffect: true)
                         customView.show()
                     }
                 }
@@ -144,18 +134,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 
                 print("PRESSED NIL")
             }
-            
         }
         
         if gesture.state == UIGestureRecognizerState.ended {
             
             if customView != nil {
-                
-                customView.dismiss()
-                
+                customView.dismiss()                
             }
         }
     }
-    
 }
-
