@@ -20,7 +20,6 @@ You can customize NMCustomView to dismiss on background tap gesture and to use b
 class MyView: UIView { 
 
     @IBOutlet weak var photoImageView: UIImageView!
-
 } 
 ```
 
@@ -40,7 +39,7 @@ class ViewController: UIViewController {
         let image = UIImage(named: "Image.jpg")
         myView.imageView.image = image
 
-        customView = NMCustomView(showView: myView, dismissOnBackgroundTap: true, backgroundBlurEffect: true)
+        customView = NMCustomView(showView: myView, tapOnBackgroundToDismiss: true, backgroundBlurEffect: true)
     } 
 }
 ```
@@ -59,7 +58,6 @@ class ViewController: UIViewController {
     Tap on background to dismiss or: 
 
 ```swift
-
     @IBAction func dismissButton(_ sender: UIButton) {
 
         customView.dismiss()
