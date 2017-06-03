@@ -1,5 +1,5 @@
 # NMCustomView
-NMCustomView allow users to show, on top of the actual view controller, a customized UIView (xib file). In the project the NMCustomView is used to zoom in on an image and to show the preview of an item in a CollectionView (using Long Press). You can also use NMCustomView to show your custom alert, for 
+NMCustomView allow users to show, on top of the actual view controller, a customized UIView (xib file). In the demo project the NMCustomView is used to show your custom alert, to zoom in on an image and to show the preview of an item in a CollectionView (using Long Press).
 example.
 
 You can customize NMCustomView to dismiss on background tap gesture and to use blur effect.
@@ -23,8 +23,7 @@ class MyView: UIView {
 } 
 ```
 
-3. Instantiate a NMCustomView object
-4. Instantiate your custom UIView (MyView) object 
+3. Instantiate your custom UIView (MyView) object 
 
 ```swift
 class ViewController: UIViewController { 
@@ -35,25 +34,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         myView = Bundle.main.loadNibNamed("MyView", owner: self, options: nil)?.first as! MyView
-
         let image = UIImage(named: "Image.jpg")
         myView.imageView.image = image
 
-        customView = NMCustomView(showView: myView, tapOnBackgroundToDismiss: true, backgroundBlurEffect: true)
     } 
 }
 ```
 
-5. Show customView
+4. Instantiate a NMCustomView object and show customView
 
 ```swift 
     @IBAction func showButton(_ sender: UIButton) {
 
+        customView = NMCustomView(showView: myView, tapOnBackgroundToDismiss: true, backgroundBlurEffect: true)
         customView.show()
     }
 ```
 
-6. Dismiss customView
+5. Dismiss customView
 
     Tap on background to dismiss or: 
 
