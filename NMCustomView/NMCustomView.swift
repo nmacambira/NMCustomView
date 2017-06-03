@@ -8,17 +8,17 @@
 
 import UIKit
 
-class NMCustomView: UIView {
+final public class NMCustomView: UIView {
 
     private var backgroundView: UIView!
     private var contentView = UIView()
     
-    init(showView view: UIView, tapOnBackgroundToDismiss: Bool, backgroundBlurEffect: Bool) {
+    public init(showView view: UIView, tapOnBackgroundToDismiss: Bool, backgroundBlurEffect: Bool) {
         super.init(frame: CGRect.zero)
         self.setupView(view, tapOnBackgroundToDismiss: tapOnBackgroundToDismiss, backgroundBlurEffect: backgroundBlurEffect)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -66,7 +66,7 @@ class NMCustomView: UIView {
         self.addSubview(contentView)
     }
     
-    func show() {
+    public func show() {
 
         self.contentView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         
@@ -81,7 +81,7 @@ class NMCustomView: UIView {
         }
     }
     
-    func dismiss() {
+    public func dismiss() {
         
         self.endEditing(true)
         
