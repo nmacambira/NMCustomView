@@ -11,5 +11,4 @@ import UIKit
 class NMZoomView: UIView {
     
     @IBOutlet weak var imageView: UIImageView!
-
 }

@@ -11,5 +11,4 @@ import UIKit
 class NMCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet var bodyImageView: UIImageView!   
-    
 }

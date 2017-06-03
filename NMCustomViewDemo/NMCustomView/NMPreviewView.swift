@@ -13,13 +13,11 @@ class NMPreviewView: UIView {
     @IBOutlet weak var bodyImageView: UIImageView!
     
     override func draw(_ rect: CGRect) {
-        
-        roundViewBorders(self)
+        roundCorners(view: self)
     }
  
-    func roundViewBorders(_ view: UIView) {
-        
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 15
+    func roundCorners(view: UIView) {
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 15
     }
 }

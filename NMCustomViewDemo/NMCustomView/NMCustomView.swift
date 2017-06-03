@@ -13,16 +13,16 @@ final public class NMCustomView: UIView {
     private var backgroundView: UIView!
     private var contentView = UIView()
     
-    public init(showView view: UIView, tapOnBackgroundToDismiss: Bool, backgroundBlurEffect: Bool) {
+    public init(showView view: UIView, tapOnBackgroundToDismiss: Bool, blurEffect: Bool, blurEffectStyle: UIBlurEffectStyle?) {
         super.init(frame: CGRect.zero)
-        self.setupView(view, tapOnBackgroundToDismiss: tapOnBackgroundToDismiss, backgroundBlurEffect: backgroundBlurEffect)
+        self.setupView(view, tapOnBackgroundToDismiss: tapOnBackgroundToDismiss, blurEffect: blurEffect, blurEffectStyle: blurEffectStyle)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView(_ view: UIView, tapOnBackgroundToDismiss: Bool, backgroundBlurEffect: Bool) {
+    private func setupView(_ view: UIView, tapOnBackgroundToDismiss: Bool, blurEffect: Bool, blurEffectStyle: UIBlurEffectStyle?) {
         
         let keyWindow = UIApplication.shared.keyWindow
         let keyWindowBounds: CGRect = (keyWindow?.bounds)!
@@ -31,27 +31,12 @@ final public class NMCustomView: UIView {
         
         self.backgroundView = UIView(frame: keyWindowBounds)
         
-        if backgroundBlurEffect {
-            
+        darkBackground()
+        
+        if blurEffect {
             if !UIAccessibilityIsReduceTransparencyEnabled() {
-                /* Blur effect */
-                self.backgroundView.backgroundColor = UIColor.clear
-                let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-                let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                blurEffectView.frame = self.backgroundView.bounds
-                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                self.backgroundView.addSubview(blurEffectView)
-                
-            } else {
-                /* Dark backgroung */
-                self.backgroundView.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
-                self.backgroundView.alpha = 0
+               blurBackground(blurEffectStyle)
             }
-            
-        } else {
-            /* Dark backgroung */
-            self.backgroundView.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
-            self.backgroundView.alpha = 0
         }
         
         if tapOnBackgroundToDismiss {
@@ -64,6 +49,24 @@ final public class NMCustomView: UIView {
         self.contentView = view
         self.contentView.center = CGPoint(x: (keyWindowBounds.midX), y: (keyWindowBounds.midY))
         self.addSubview(contentView)
+    }
+    
+    private func blurBackground(_ blurEffectStyle: UIBlurEffectStyle?) {
+        backgroundView.backgroundColor = UIColor.clear
+        backgroundView.alpha = 1
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        if let blurStyle = blurEffectStyle {
+            blurEffect = UIBlurEffect(style: blurStyle)
+        }
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.backgroundView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.addSubview(blurEffectView)
+    }
+    
+    private func darkBackground() {
+        backgroundView.backgroundColor = UIColor(white: 0.0, alpha: 0.3)
+        backgroundView.alpha = 0
     }
     
     public func show() {

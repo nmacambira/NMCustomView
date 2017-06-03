@@ -9,13 +9,14 @@
 import UIKit
 
 class NMButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+        
+    override var isHighlighted: Bool {
+        didSet {
+            if (isHighlighted) {
+                self.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+            } else {
+                self.backgroundColor = UIColor.white
+            }
+        }
     }
-    */
-
 }

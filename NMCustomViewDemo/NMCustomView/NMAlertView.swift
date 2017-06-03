@@ -1,5 +1,5 @@
 //
-//  NMCustomAlert.swift
+//  NMAlertView.swift
 //  NMCustomView
 //
 //  Created by Natalia Macambira on 03/06/17.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class NMCustomAlert: UIView {
+class NMAlertView: UIView {
     
     @IBOutlet weak var textField: UITextField!
-    
-    @IBOutlet weak var sendButton: UIButton!
-    
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var sendButton: NMButton!
+    @IBOutlet weak var cancelButton: NMButton!
 
-    
     override func draw(_ rect: CGRect) {
-        
+        textFieldConfig(textField)
         roundCorners(view: self)
+    }
+    
+    func textFieldConfig(_ textField: UITextField) {
+        textField.keyboardType = .emailAddress
+        textField.autocorrectionType = .no
+        textField.clearButtonMode = .whileEditing
     }
     
     func roundCorners(view: UIView) {

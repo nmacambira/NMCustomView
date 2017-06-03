@@ -19,6 +19,9 @@
 		83A06C301EB7D07B000B8F13 /* NMPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A06C2F1EB7D07B000B8F13 /* NMPreviewView.swift */; };
 		83A06C341EB7D51F000B8F13 /* Image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83A06C331EB7D51F000B8F13 /* Image.jpg */; };
 		83A06C391EB7E399000B8F13 /* NMCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A06C381EB7E399000B8F13 /* NMCollectionViewCell.swift */; };
+		83E261D71EE2AD0900B58E5B /* NMAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E261D61EE2AD0900B58E5B /* NMAlertView.swift */; };
+		83E261D91EE2AD1F00B58E5B /* NMAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E261D81EE2AD1F00B58E5B /* NMAlertView.xib */; };
+		83E261DB1EE2F81A00B58E5B /* NMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E261DA1EE2F81A00B58E5B /* NMButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		83A06C2F1EB7D07B000B8F13 /* NMPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMPreviewView.swift; sourceTree = "<group>"; };
 		83A06C331EB7D51F000B8F13 /* Image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Image.jpg; sourceTree = "<group>"; };
 		83A06C381EB7E399000B8F13 /* NMCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMCollectionViewCell.swift; sourceTree = "<group>"; };
+		83E261D61EE2AD0900B58E5B /* NMAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMAlertView.swift; sourceTree = "<group>"; };
+		83E261D81EE2AD1F00B58E5B /* NMAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NMAlertView.xib; sourceTree = "<group>"; };
+		83E261DA1EE2F81A00B58E5B /* NMButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 				83A06C191EB7CD8F000B8F13 /* Main.storyboard */,
 				83A06C291EB7D01F000B8F13 /* NMPreviewView.xib */,
 				83A06C2B1EB7D04E000B8F13 /* NMZoomView.xib */,
+				83E261D81EE2AD1F00B58E5B /* NMAlertView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -94,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				83A06C171EB7CD8F000B8F13 /* ViewController.swift */,
+				83E261DA1EE2F81A00B58E5B /* NMButton.swift */,
+				83E261D61EE2AD0900B58E5B /* NMAlertView.swift */,
 				83A06C2D1EB7D067000B8F13 /* NMZoomView.swift */,
 				83A06C2F1EB7D07B000B8F13 /* NMPreviewView.swift */,
 				83A06C381EB7E399000B8F13 /* NMCollectionViewCell.swift */,
@@ -169,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A06C201EB7CD8F000B8F13 /* LaunchScreen.storyboard in Resources */,
+				83E261D91EE2AD1F00B58E5B /* NMAlertView.xib in Resources */,
 				83A06C1D1EB7CD8F000B8F13 /* Assets.xcassets in Resources */,
 				83A06C2A1EB7D01F000B8F13 /* NMPreviewView.xib in Resources */,
 				83A06C341EB7D51F000B8F13 /* Image.jpg in Resources */,
@@ -184,11 +194,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E261DB1EE2F81A00B58E5B /* NMButton.swift in Sources */,
 				83A06C301EB7D07B000B8F13 /* NMPreviewView.swift in Sources */,
 				83A06C181EB7CD8F000B8F13 /* ViewController.swift in Sources */,
 				83A06C281EB7CFA8000B8F13 /* NMCustomView.swift in Sources */,
 				83A06C2E1EB7D067000B8F13 /* NMZoomView.swift in Sources */,
 				83A06C161EB7CD8F000B8F13 /* AppDelegate.swift in Sources */,
+				83E261D71EE2AD0900B58E5B /* NMAlertView.swift in Sources */,
 				83A06C391EB7E399000B8F13 /* NMCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

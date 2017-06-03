@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Gy-AO-KEJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Gy-AO-KEJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,32 +25,60 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UI7-4f-vkp">
                                 <rect key="frame" x="16" y="72" width="343" height="29"/>
                                 <segments>
+                                    <segment title="Alert"/>
                                     <segment title="Zoom"/>
                                     <segment title="Preview"/>
                                 </segments>
                                 <connections>
-                                    <action selector="changedValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="NtP-t4-DwN"/>
+                                    <action selector="segmentChangedValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="o1u-Y9-4cx"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap image to zoom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-Q3-mJ3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test the alerts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-Q3-mJ3">
                                 <rect key="frame" x="16" y="120" width="343" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cLj-jz-hQC">
-                                <rect key="frame" x="40" y="180" width="100" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC0-F3-fvy" userLabel="AlertView">
+                                <rect key="frame" x="0.0" y="154" width="375" height="513"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-fn-1MS">
+                                        <rect key="frame" x="143.5" y="24" width="88" height="30"/>
+                                        <state key="normal" title="Regular alert"/>
+                                        <connections>
+                                            <action selector="regularAlertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSp-L2-Efa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVU-P4-RAo">
+                                        <rect key="frame" x="142" y="86" width="91" height="30"/>
+                                        <state key="normal" title="Custom Alert"/>
+                                        <connections>
+                                            <action selector="customAlertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZw-p4-8bX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="P3Y-MV-4HM"/>
-                                    <constraint firstAttribute="height" constant="100" id="faH-Yh-yQv"/>
+                                    <constraint firstItem="uVU-P4-RAo" firstAttribute="centerX" secondItem="eC0-F3-fvy" secondAttribute="centerX" id="2Rz-i6-gCe"/>
+                                    <constraint firstItem="uVU-P4-RAo" firstAttribute="top" secondItem="K7s-fn-1MS" secondAttribute="bottom" constant="32" id="C2D-O2-nHK"/>
+                                    <constraint firstItem="K7s-fn-1MS" firstAttribute="centerX" secondItem="eC0-F3-fvy" secondAttribute="centerX" id="MZt-Ne-QYj"/>
+                                    <constraint firstItem="K7s-fn-1MS" firstAttribute="top" secondItem="eC0-F3-fvy" secondAttribute="top" constant="24" id="yv9-k0-YY8"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvG-GL-GUp">
-                                <rect key="frame" x="40" y="180" width="100" height="100"/>
-                                <connections>
-                                    <action selector="zoomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tT0-cO-Bqw"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqU-yy-Mh3" userLabel="Zoom View Segment">
+                                <rect key="frame" x="0.0" y="154" width="375" height="513"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvG-GL-GUp">
+                                        <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Image.jpg"/>
+                                        <connections>
+                                            <action selector="zoomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tT0-cO-Bqw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-zC-Wu1">
                                 <rect key="frame" x="0.0" y="154" width="375" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,27 +122,31 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UI7-4f-vkp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3zM-Y5-uaJ"/>
-                            <constraint firstItem="cLj-jz-hQC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="6xl-ar-kKN"/>
-                            <constraint firstItem="dvG-GL-GUp" firstAttribute="leading" secondItem="cLj-jz-hQC" secondAttribute="leading" id="BcE-8B-QDt"/>
+                            <constraint firstItem="lqU-yy-Mh3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Cb-JP-hjc"/>
+                            <constraint firstItem="eC0-F3-fvy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="C0H-df-gJI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zpy-zC-Wu1" secondAttribute="bottom" id="DOf-xY-8C8"/>
                             <constraint firstItem="5Nh-Q3-mJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="GxT-uy-Vc1"/>
-                            <constraint firstItem="dvG-GL-GUp" firstAttribute="bottom" secondItem="cLj-jz-hQC" secondAttribute="bottom" id="IBr-ie-poj"/>
                             <constraint firstItem="zpy-zC-Wu1" firstAttribute="top" secondItem="5Nh-Q3-mJ3" secondAttribute="bottom" constant="16" id="Jdt-ne-e0a"/>
-                            <constraint firstItem="dvG-GL-GUp" firstAttribute="trailing" secondItem="cLj-jz-hQC" secondAttribute="trailing" id="Jqt-YV-vSF"/>
                             <constraint firstItem="zpy-zC-Wu1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K7Z-Ew-EuO"/>
                             <constraint firstAttribute="trailing" secondItem="zpy-zC-Wu1" secondAttribute="trailing" id="SWP-Tq-mCa"/>
                             <constraint firstItem="UI7-4f-vkp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="c0w-Hf-bha"/>
+                            <constraint firstItem="eC0-F3-fvy" firstAttribute="top" secondItem="5Nh-Q3-mJ3" secondAttribute="bottom" constant="16" id="dcV-WD-Kb3"/>
+                            <constraint firstAttribute="trailing" secondItem="eC0-F3-fvy" secondAttribute="trailing" id="gKn-ps-kpu"/>
+                            <constraint firstItem="lqU-yy-Mh3" firstAttribute="top" secondItem="5Nh-Q3-mJ3" secondAttribute="bottom" constant="16" id="lB9-21-4MM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lqU-yy-Mh3" secondAttribute="bottom" id="mz5-8Q-Y4L"/>
                             <constraint firstAttribute="trailing" secondItem="5Nh-Q3-mJ3" secondAttribute="trailing" constant="16" id="oEw-bV-jrn"/>
-                            <constraint firstItem="dvG-GL-GUp" firstAttribute="top" secondItem="cLj-jz-hQC" secondAttribute="top" id="pCN-6T-z0Y"/>
                             <constraint firstItem="5Nh-Q3-mJ3" firstAttribute="top" secondItem="UI7-4f-vkp" secondAttribute="bottom" constant="20" id="ryX-0l-UPS"/>
-                            <constraint firstItem="cLj-jz-hQC" firstAttribute="top" secondItem="UI7-4f-vkp" secondAttribute="bottom" constant="80" id="yst-Aa-hvP"/>
+                            <constraint firstAttribute="trailing" secondItem="lqU-yy-Mh3" secondAttribute="trailing" id="vup-GP-g44"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eC0-F3-fvy" secondAttribute="bottom" id="vy4-Sw-Efp"/>
                             <constraint firstItem="UI7-4f-vkp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="zw6-Vp-aCr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NMCustomView" id="rUp-NM-PNe"/>
                     <connections>
+                        <outlet property="alertViewSegment" destination="eC0-F3-fvy" id="PaB-Kg-D91"/>
                         <outlet property="collectionView" destination="zpy-zC-Wu1" id="Qqu-Z0-ac3"/>
-                        <outlet property="messageLabel" destination="5Nh-Q3-mJ3" id="yh9-OE-fgK"/>
+                        <outlet property="messageLabel" destination="5Nh-Q3-mJ3" id="pPh-W0-uee"/>
+                        <outlet property="zoomViewSegment" destination="lqU-yy-Mh3" id="VKR-An-7G0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
