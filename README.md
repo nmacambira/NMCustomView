@@ -1,15 +1,11 @@
 # NMCustomView
-NMCustomView allow users to show, on top of the actual view controller, a customized UIView (xib file). In the demo project the NMCustomView is used to show your custom alert, to zoom in on an image and to show the preview of an item in a CollectionView (using Long Press).
-example.
+NMCustomView allow users to show, on top of the actual view controller, a customized UIView (xib file). In the demo project the NMCustomView is used to show a custom alert, to zoom in on an image and to show the preview of an item in a CollectionView (using Long Press).
 
 You can customize NMCustomView to dismiss on background tap gesture and to use blur effect.
 
 ## Screenshots
 
- ![Zoom select](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView1.png) | ![Zoom image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView2.png) 
-
-
- ![Preview select](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView3.png) | ![Preview image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView4.png)  
+ ![Alert image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView1.png)  ![Zoom image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView2.png)  ![Preview image](https://github.com/nmacambira/NMCustomView/blob/master/Images/NMCustomView3.png)
 
 ## Usage 
 
