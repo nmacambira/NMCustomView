@@ -19,7 +19,7 @@ class MyView: UIView {
 } 
 ```
 
-3. Instantiate your custom UIView (MyView) object 
+3. Instantiate your custom UIView (MyView) 
 
 ```swift
 class ViewController: UIViewController { 
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 ```swift 
     @IBAction func showButton(_ sender: UIButton) {
 
-        customView = NMCustomView(showView: myView, tapOnBackgroundToDismiss: true, backgroundBlurEffect: true)
+        customView = NMCustomView(showView: myView, tapOnBackgroundToDismiss: true, blurEffect: true, blurEffectStyle: .dark)
         customView.show()
     }
 ```
