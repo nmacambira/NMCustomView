@@ -126,12 +126,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         customView.show()
     }
     
-    func cancelButton() {
+    @objc func cancelButton() {
         customView.dismiss()
         alertView.textField.text = ""
     }
     
-    func sendEmail() {
+    @objc func sendEmail() {
         customView.dismiss()
         let email = alertView.textField.text!
         alertView.textField.text = ""
@@ -143,7 +143,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         customView.show()
     }
     
-    func showPreviewWtihLongPress (_ gesture: UILongPressGestureRecognizer) {
+    @objc func showPreviewWtihLongPress (_ gesture: UILongPressGestureRecognizer) {
         showPreviewWtihLongPress(gesture, view: self.view, collectionView: self.collectionView)
     }
     
@@ -183,7 +183,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     //MARK: - Keyboards
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         
         if customView != nil {
             if let userInfo = notification.userInfo {
@@ -197,7 +197,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         
         if customView != nil {
             if let userInfo = notification.userInfo {

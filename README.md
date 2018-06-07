@@ -64,5 +64,5 @@ class ViewController: UIViewController {
 
 ## Info
 
-- Swift 3.1 
+- Swift 4.0
 

@@ -84,7 +84,7 @@ final public class NMCustomView: UIView {
         }
     }
     
-    public func dismiss() {
+    @objc public func dismiss() {
         
         self.endEditing(true)
         
