@@ -23,6 +23,7 @@ class NMAlertView: UIView {
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = .no
         textField.clearButtonMode = .whileEditing
+        textField.becomeFirstResponder()
     }
     
     func roundCorners(view: UIView) {
